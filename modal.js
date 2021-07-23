@@ -1,31 +1,23 @@
-function editNav() {
+const editNav = () => {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
-    x.className += " responsive";
+      x.className += " responsive";
   } else {
-    x.className = "topnav";
+      x.className = "topnav";
   }
 }
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
-const modalClose = document.querySelector('.close');
-const modalContent = document.querySelector('.content');
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
-function launchModal() {
+const launchModal = () => {
   modalbg.style.display = "block";
 }
 
-// close modal event
-modalClose.addEventListener('click', closeModal);
-
 // close modal form
-function closeModal() {
+const closeModal = () => {
   modalbg.style.display = "none";
 }
+
+export {editNav, launchModal, closeModal}
