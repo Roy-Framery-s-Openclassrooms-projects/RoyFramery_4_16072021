@@ -334,6 +334,14 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+.formData div {
+  color: #e54858;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
