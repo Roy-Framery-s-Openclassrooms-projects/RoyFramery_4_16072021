@@ -18,6 +18,9 @@ const launchModal = () => {
 // close modal form
 const closeModal = () => {
   modalbg.style.display = "none";
+  document.querySelector('form').style.display ='block';
+  document.querySelector('.confirm-message').style.display ='none';
+
 }
 
 export {editNav, launchModal, closeModal}
