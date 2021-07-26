@@ -66,10 +66,12 @@ const validate = (e) => {
     }
 
     // to control the age of the user is over 18
+    const authorizationAge = 18;
+
     function isOver18(dateOfBirth) {
         // find the date 18 years ago
         const date18YrsAgo = new Date();
-        date18YrsAgo.setFullYear(date18YrsAgo.getFullYear() - 18);
+        date18YrsAgo.setFullYear(date18YrsAgo.getFullYear() - authorizationAge);
 
         // check if the date of birth is before that date
         return Date.parse(dateOfBirth) <= Date.parse(date18YrsAgo);
@@ -85,7 +87,7 @@ const validate = (e) => {
     } else {
         if (!isOver18(birthdate.value)){
             birthdate.style.border = redBorder;
-            birthdateError.innerText = 'Vous devez être majeur pour participer au tournois.';
+            birthdateError.innerText = `Vous devez avoir ${authorizationAge} pour participer au tournois.`;
             valid = false;
             e.preventDefault();    
         }else {
