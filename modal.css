@@ -47,7 +47,7 @@ img {
 .topnav a {
   float: left;
   display: block;
-  color: #000000;
+  color: #ff0000;
   text-align: center;
   padding: 12px 12px;
   margin: 5px;
@@ -107,9 +107,12 @@ img {
   .main-navbar a .icon {
     padding: 0;
   }
-  .topnav a.icon {
-    color: red;
+ 
+  .topnav a.icon:hover {
+    background: #ff0000 !important;
+    color: #fff !important;
   }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
