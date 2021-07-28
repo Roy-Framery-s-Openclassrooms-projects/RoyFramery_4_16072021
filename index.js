@@ -1,21 +1,20 @@
-// imports
-import {editNav, launchModal, closeModal} from './modal.js';
-import validate from './formValidation.js';
+import Validator from "./js/class/validator.js";
+import Modal from "./js/class/modal.js";
+import {inputs, errorMessageInput} from "./js/configValidator.js";
 
-// DOM Elements
-const navModal = document.querySelector(".icon");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const modalClose = document.querySelectorAll(".close-btn");
+// DOM 
 const form = document.querySelector(".register");
 
-// lunch modal nav
-navModal.addEventListener("click", editNav);
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// close modal event
-modalClose.forEach((btn) => btn.addEventListener('click', closeModal));
+Modal.modalEvents();
 
 // Validate the form
-form.addEventListener('submit', validate);
+const validator = new Validator(inputs, errorMessageInput);
+
+form.onsubmit = (e) => {
+    e.preventDefault();
+    if (validator.launchValidation()) {
+        form.reset();
+        form.style.display ='none';
+        document.querySelector('.confirm-message').style.display ='flex';
+    }
+}
