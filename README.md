@@ -18,14 +18,14 @@
 
 ![Légende](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/Logo.png)
 
-__*GameOn*__ is the forth project I made during this training. As a fresh junior developer, the goal 🎯 was to continue the work done by a previous developer who left the company, and thus complete the front-end from his [repository](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/). Moreover, I had at my disposal the [mock-ups](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/maquettes.png) as well as a list of issues and contraints:
+🎮	__*GameOn*__ is the forth project I made during this training. As a fresh junior developer, the goal 🎯 was to continue the work done by a previous developer who left the company, and thus complete the front-end from his [repository](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/). Moreover, I had at my disposal the [mock-ups](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/maquettes.png) as well as a list of issues and contraints:
 
 ### Issues
-1. TODO : Close modal
+- [x] [TODO : Close modal](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/1) ✖️
         
         Add functionality to the button (x)  
   
-2. Implémenter entrées du formulaire
+- [x] [Implémenter entrées du formulaire](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/2) 🧾		
 
          - Link labels to entries in the HTML using the "for" and "id" attributes in the existing code. Correct the HTML code when necessary.
          - Use pure JavaScript (not jQuery) to finish the form :
@@ -40,7 +40,7 @@ __*GameOn*__ is the forth project I made during this training. As a fresh junior
                6.  The general conditions box is checked, the other box is optional / can be left unchecked.
             - Keep the form data (do not delete the form) when it does not pass validation.
 
-3. Add validation or error messages 
+- [x] [Add validation ✔️ or error messages ❌](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/3)
    
         Specific error messages should appear below the incorrect entry. The error messages should appear below the associated input field. Examples :
 
@@ -49,11 +49,11 @@ __*GameOn*__ is the forth project I made during this training. As a fresh junior
         - "You must verify that you agree to the terms and conditions."
         - "You must enter your date of birth."
   
-4. Add confirmation when sending successfully
+- [x] [Add confirmation when sending successfully](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/4) 👌	
 
         After a successful validation, include a confirmation message of the successful submission for the user (e.g., "Thank you! Your reservation has been received.")
 
-5. Manual testing
+- [x] [Manual testing](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/5) ⌨️	
 
          - Visualize and test the user interface in the latest versions of Chrome and Firefox, as well as in the mobile and desktop versions. Correct existing display errors.
          - Test all functionality of buttons and form entries (test for correct and incorrect values)
