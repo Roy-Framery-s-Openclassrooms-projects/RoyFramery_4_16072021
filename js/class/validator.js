@@ -1,8 +1,8 @@
 export default class Validator {
     
-    constructor(inputs, errorMessageInput) {
+    constructor(inputs, containerInput) {
         this.inputs = inputs;
-        this.errorMessageInput = errorMessageInput;
+        this.containerInput = containerInput;
     }
     valid = true;
 
@@ -33,8 +33,9 @@ export default class Validator {
     // to remove error messages
     removeErrorMessage = () => {
         this.valid = true;
-        Array.from(this.errorMessageInput).map((field) => {
-            field.innerText = '';
+        Array.from(this.containerInput).map((field) => {
+            field.removeAttribute("data-error-visible");
+            field.removeAttribute("data-error");
         });
         // to change color of location icons
         // Array.from(this.inputs['location']['icons']).map((field) => {
@@ -50,42 +51,49 @@ export default class Validator {
             switch (input) {
                 case "firstname":
                     if (!this.firstnameValidation(this.inputs[input].element, this.inputs[input].regex)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
+                        // this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
                         this.valid = false;
                     }
                     break;
 
                 case "lastname":
                     if (!this.lastnameValidation(this.inputs[input].element, this.inputs[input].regex)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
 
                 case "email":
                     if (!this.emailValidation(this.inputs[input].element, this.inputs[input].regex)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
 
                 case "birthdate":
                     if (!this.birthdateValidation(this.inputs[input].element, this.inputs[input].regex)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
 
                 case "contest":
                     if (!this.contestValidation(this.inputs[input].element, this.inputs[input].regex)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
 
                 case "location":
                     if (!this.locationValidation(this.inputs[input].element)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element[0].parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element[0].parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         // to change color of location icons
                         // Array.from(this.inputs[input].icons).map((field) => {
                         //     field.style.border = "#FF4E60 2px solid";
@@ -96,7 +104,8 @@ export default class Validator {
 
                 case "checkbox":
                     if (!this.checkboxValidation(this.inputs[input].element)) {
-                        this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
+                        this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
+                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;

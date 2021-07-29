@@ -44,6 +44,6 @@ const inputs = {
 };
 
 // to reach all elements that display error messages for the form validation
-const errorMessageInput = document.querySelectorAll(".formData div");
+const containerInput = document.querySelectorAll(".formData");
 
-export {inputs, errorMessageInput};
+export {inputs, containerInput};

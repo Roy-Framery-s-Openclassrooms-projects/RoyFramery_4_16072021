@@ -373,14 +373,17 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
-
-.formData div {
-  color: #e54858;
+/* custom error message */
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size:14px;
+  text-align: start;
+  color:#e54858;
   font-weight: normal;
-  font-size: 14px;
-  margin-top: 5px;
+  line-height: 16px;
+  margin-bottom: 0;
 }
-
+/* custom validation message of the form */
 .confirm-message {
   display: none;
   flex-direction: column;
