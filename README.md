@@ -18,7 +18,7 @@
 
 ![Légende](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/Logo.png)
 
-🎮	__*GameOn*__ is the forth project I made during this training. As a fresh junior developer, the goal 🎯 was to continue the work done by a previous developer who left the company, and thus complete the front-end from his [repository](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/). Moreover, I had at my disposal the [mock-ups](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/maquettes.png) as well as a list of issues and contraints:
+🎮	__*GameOn*__ is the forth project I made during this training. As a fresh junior developer, the goal 🎯 was to continue the work done by a previous developer who left the company, and thus complete the front-end from his [repository](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/). Moreover, I had at my disposal the [mock-ups](https://github.com/Roy-Framery-s-Openclassrooms-projects/RoyFramery_4_16072021/blob/master/img/maquettes.png) as well as a list of issues and contraints:
 
 ### Issues
 - [x] [TODO : Close modal](https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues/1) ✖️
