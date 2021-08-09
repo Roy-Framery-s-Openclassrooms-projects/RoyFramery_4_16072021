@@ -7,11 +7,16 @@ export default class Validator {
     valid = true;
 
     // methods for the validation
-        // to check if the first name is not empty or if it have 2 letters minimum
-        firstnameValidation = (element, regex) => element.value == "" || element.value.length < 2 || !regex.test(element.value) ? false : true;
 
-        // to check if the first name is not empty or if it have 2 letters minimum
-        lastnameValidation = (element, regex) => element.value == "" || element.value.length < 2 || !regex.test(element.value) ? false : true;
+        /**
+         * to check if the first name or last name 
+         * is not empty or if it have 2 letters minimum
+         * 
+         * @param {object} element The DOM element to test
+         * @param {object} regex The regex we want to test
+         * @returns {boolean} Validation is correct or uncorrect
+         */
+        nameValidation = (element, regex) => element.value == "" || element.value.length < 2 || !regex.test(element.value) ? false : true;
 
         // To check if the email is correct
         emailValidation = (element, regex) => !regex.test(element.value) ? false : true;
@@ -35,12 +40,7 @@ export default class Validator {
         this.valid = true;
         Array.from(this.containerInput).map((field) => {
             field.removeAttribute("data-error-visible");
-            field.removeAttribute("data-error");
         });
-        // to change color of location icons
-        // Array.from(this.inputs['location']['icons']).map((field) => {
-        //     field.style.border = "#279e7a 2px solid";
-        // })
     };
 
     launchValidation = () => {
@@ -50,18 +50,16 @@ export default class Validator {
         for (const input in this.inputs) {
             switch (input) {
                 case "firstname":
-                    if (!this.firstnameValidation(this.inputs[input].element, this.inputs[input].regex)) {
+                    if (!this.nameValidation(this.inputs[input].element, this.inputs[input].regex)) {
+                        console.log(this.inputs[input].regex)
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
-                        // this.inputs[input].elementErrorMessage.innerText = this.inputs[input].errorMessage;
                         this.valid = false;
                     }
                     break;
 
                 case "lastname":
-                    if (!this.lastnameValidation(this.inputs[input].element, this.inputs[input].regex)) {
+                    if (!this.nameValidation(this.inputs[input].element, this.inputs[input].regex)) {
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
@@ -69,7 +67,6 @@ export default class Validator {
                 case "email":
                     if (!this.emailValidation(this.inputs[input].element, this.inputs[input].regex)) {
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
@@ -77,7 +74,6 @@ export default class Validator {
                 case "birthdate":
                     if (!this.birthdateValidation(this.inputs[input].element, this.inputs[input].regex)) {
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
@@ -85,7 +81,6 @@ export default class Validator {
                 case "contest":
                     if (!this.contestValidation(this.inputs[input].element, this.inputs[input].regex)) {
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;
@@ -93,11 +88,6 @@ export default class Validator {
                 case "location":
                     if (!this.locationValidation(this.inputs[input].element)) {
                         this.inputs[input].element[0].parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element[0].parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
-                        // to change color of location icons
-                        // Array.from(this.inputs[input].icons).map((field) => {
-                        //     field.style.border = "#FF4E60 2px solid";
-                        // })
                         this.valid = false;
                     }
                     break;
@@ -105,7 +95,6 @@ export default class Validator {
                 case "checkbox":
                     if (!this.checkboxValidation(this.inputs[input].element)) {
                         this.inputs[input].element.parentNode.setAttribute("data-error-visible", true);
-                        this.inputs[input].element.parentNode.setAttribute("data-error", this.inputs[input].errorMessage);
                         this.valid = false;
                     }
                     break;

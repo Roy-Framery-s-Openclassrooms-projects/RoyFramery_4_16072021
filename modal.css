@@ -248,30 +248,23 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
+.formData[data-error-visible="true"]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  font-size: 14px;
+  font-weight: normal;
   color: #e54858;
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-.formData[data-error-visible="true"]::after {
+  text-align: start;
+  line-height: 1;
   opacity: 1;
+  transition: 0.3s;
 }
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -372,16 +365,6 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
-}
-/* custom error message */
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size:14px;
-  text-align: start;
-  color:#e54858;
-  font-weight: normal;
-  line-height: 16px;
-  margin-bottom: 0;
 }
 /* custom validation message of the form */
 .confirm-message {
